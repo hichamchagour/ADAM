@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>quiz</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        background-color: #000000;
+      }
+
+      .animated-text {
+        color: #ffffff;
+        font-size: 36px;
+        margin: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.5s ease-out forwards;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .question {
+        color: #ffffff;
+        font-size: 24px;
+        margin-bottom: 10px;
+        opacity: 0;
+        animation: fadeInDown 0.5s ease-out forwards 1s;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      input[type="text"] {
+        padding: 5px;
+        font-size: 16px;
+      }
+
+      .response {
+        color: #ffffff;
+        font-size: 24px;
+        margin-top: 20px;
+        opacity: 0;
+        animation: fadeInUp 0.5s ease-out forwards 2s;
+      }
+
+      .instagram-link {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="animated-text">I love you</div>
+
+    <div class="question">You love me?</div>
+    <input type="text" id="responseInput" placeholder="1 or 0?" />
+
+    <button onclick="showResponse()">Submit</button>
+    <div id="response" class="response"></div>
+    <script>
+      function showResponse() {
+        var responseInput = document.getElementById("responseInput");
+        var responseDiv = document.getElementById("response");
+        var response = responseInput.value.toLowerCase();
+        if (response === "1") {
+          responseDiv.innerHTML =
+            '<div class="animated-text">I love</div><div class="animated-text">I love you too</div><div class="response">Hehe&lt;3</div><div class="response"><a class="instagram-link" href="https://www.instagram.com/adam_el_moussawi/" target="_blank"> Click her to Text me on Instagram!</a></div>';
+        } else if (response === "0") {
+          responseDiv.innerHTML =
+            '<div class="animated-text">HHHHHHHH :( okeeeey';
+        } else {
+          responseDiv.innerHTML =
+            '<div class="response">Invalid response. Please enter 1 or 0.</div>';
+        }
+      }
+    </script>
+  </body>
+</html>
